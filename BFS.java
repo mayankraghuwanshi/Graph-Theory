@@ -3,26 +3,59 @@ import utils.Graph;
 import utils.Edge;
 class main{
 
-    //using queue.
-    static void BFS(ArrayList<Edge> graph[] , int src){
+    static void BFS(int src , int des, ArrayList<Edge> graph[] ){
+        boolean isVisited [] = new boolean[graph.length];
+        Queue<Integer> queue = new LinkedList<>();
+        int cycle=0;
+        int level=0;
+        queue.add(src);
+        queue.add(-1);
+        while(queue.size()>1){
+            int currentVertex = queue.remove();
+            if(currentVertex==-1){
+                queue.add(-1);
+                level++;
+                continue;
+            }
+            if(isVisited[currentVertex]){
+                cycle++;
+                System.out.println("Cycle detected @ "+currentVertex);
+                continue;
+            }
+            if(currentVertex==des){
+                System.out.println("Vertex "+des+" has found at level "+level+ " from "+src);
+            }
+            isVisited[currentVertex]=true;
+            for(Edge e : graph[currentVertex]){
+                queue.add(e.vertex);
+            }
+        }
+    }
+    static void BFS2(int src , int des , ArrayList<Edge> graph[]){
         boolean isVisited[] = new boolean[graph.length];
         Queue<Integer> queue = new LinkedList<>();
         queue.add(src);
-        StringBuilder output = new StringBuilder();
-        isVisited[src]=true;
+        int level=0;
+        int cycle=0;
         while(queue.size()>0){
-            int enquedVertex = queue.peek();
-            queue.remove();
-            output.append(enquedVertex+"->");
-            for(Edge e : graph[enquedVertex]){
-                int currentVertex = e.vertex;
-                if(!isVisited[currentVertex]){
-                    isVisited[currentVertex]=true;
-                    queue.add(currentVertex);
+            int size = queue.size();
+            while(size-->0){
+                int currentVertex = queue.remove();
+                if(isVisited[currentVertex]){
+                    cycle++;
+                    System.out.println("Cycle detected @ "+currentVertex);
+                    continue;
+                }
+                isVisited[currentVertex]=true;
+                if(currentVertex==des){
+                    System.out.println("Vertex "+des+" has found at level "+level+ " from "+src);
+                }
+                for(Edge e : graph[currentVertex]){
+                    queue.add(e.vertex);
                 }
             }
+            level++;
         }
-        System.out.println(output.substring(0,output.length()-2));
     }
     public static void main(String args[]){
         Graph g = new Graph(8);
@@ -35,7 +68,8 @@ class main{
         g.addEdge(5,6,16,true);
         g.addEdge(5,7,17,true);
         g.addEdge(6,7,19,true);
-        BFS(graph,1);
+        // BFS(1,6,graph);
+        BFS2(1,6,graph);
                
     }
 }
