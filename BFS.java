@@ -3,7 +3,7 @@ import utils.Graph;
 import utils.Edge;
 class main{
 
-    //using stack
+    //using queue.
     static void BFS(ArrayList<Edge> graph[] , int src){
         boolean isVisited[] = new boolean[graph.length];
         Queue<Integer> queue = new LinkedList<>();
