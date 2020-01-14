@@ -2,7 +2,8 @@ import java.util.*;
 import utils.Graph;
 import utils.Edge;
 class main{
-
+    //NOTE: BFS can't detect cycle in a directed graph.
+    //Below implementation is can only work with undirected graph.
     static void BFS(int src , int des, ArrayList<Edge> graph[] ){
         boolean isVisited [] = new boolean[graph.length];
         Queue<Integer> queue = new LinkedList<>();
@@ -58,18 +59,18 @@ class main{
         }
     }
     public static void main(String args[]){
-        Graph g = new Graph(8);
+        Graph g = new Graph(5);
         ArrayList<Edge> graph[] = g.graph;
-        g.addEdge(1,3,2,true);
-        g.addEdge(1,2,10,true);
-        g.addEdge(2,4,13,true);
-        g.addEdge(3,4,12,true);
-        g.addEdge(3,5,15,true);
-        g.addEdge(5,6,16,true);
-        g.addEdge(5,7,17,true);
-        g.addEdge(6,7,19,true);
+        g.addEdge(0,3,2,false);
+        g.addEdge(0,1,10,false);
+        g.addEdge(1,2,13,false);
+        g.addEdge(3,4,12,false);
+        g.addEdge(4,2,15,false);
+        // g.addEdge(5,6,16,true);
+        // g.addEdge(5,7,17,true);
+        // g.addEdge(6,7,19,true);
         // BFS(1,6,graph);
-        BFS2(1,6,graph);
+        BFS2(0,4,graph);
                
     }
 }

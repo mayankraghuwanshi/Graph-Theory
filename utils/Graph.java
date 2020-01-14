@@ -9,7 +9,7 @@ public class Graph{
             this.graph[i]=new ArrayList<>();
         }
     }
-    public void addEdge(int v , int u  , int weight  , boolean bidir){
+    public void addEdge(int u , int v  , int weight  , boolean bidir){
         if(u>=0 && u<this.graph.length && v>=0 && v<this.graph.length){
             this.graph[u].add(new Edge(v,weight));
             if(bidir){
