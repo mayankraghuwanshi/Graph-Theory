@@ -55,6 +55,7 @@ class main{
         }
     }
 
+    //with path from src to destination.
     static void BFS3(int src , int des , ArrayList<Edge>graph[]){
         int n = graph.length;
         int parent[] = new int[n];
