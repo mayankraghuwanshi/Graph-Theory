@@ -2,8 +2,8 @@ import java.util.*;
 import utils.Graph;
 import utils.Edge;
 class main{
-    //NOTE: BFS can't detect cycle in a directed graph.
-    //Below implementation is can only work with undirected graph.
+    //NOTE: BFS gives shortest path in terms of edges not weigh. so bfs is for unweighted graph.
+    //in this code I have used previous implementation of graph wich contains weight but I have not considered weight in anywhere in this code.
     static void BFS(int src , int des , ArrayList<Edge> graph[]){
         boolean isVisited[] = new boolean[graph.length];
         Queue<Integer> queue = new LinkedList<>();
@@ -60,6 +60,7 @@ class main{
         int n = graph.length;
         int parent[] = new int[n];
         int distance[] = new int[n];
+        Arrays.fill(distance,Integer.MAX_VALUE);
         boolean isVisited[] = new boolean[n];
         Queue<Integer> queue = new LinkedList<>();
         queue.add(src);

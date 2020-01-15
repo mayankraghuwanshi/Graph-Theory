@@ -14,7 +14,7 @@ class main{
         g.addEdge(5,7,17,true);
         g.addEdge(6,7,19,true);
         g.display();
-        //using bfs.
+        //using bfs.  this can also be done using dfs.
         Queue<Integer> queue = new LinkedList<>();
         boolean isVisited[] = new boolean[graph.length];
         int count=0;
