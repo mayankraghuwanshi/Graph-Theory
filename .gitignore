@@ -1,2 +1,2 @@
-.main.class
-.main$Edge.class
+*.class
+*.main$Edge.class
