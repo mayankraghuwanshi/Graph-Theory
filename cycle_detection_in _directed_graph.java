@@ -32,7 +32,7 @@ class main{
             }
             noOfPopedVerticex++;
         }
-        return noOfPopedVerticex==noOfPopedVerticex;
+        return noOfNode==noOfPopedVerticex?false:true;
     }
 
     // Algorighm-
@@ -52,14 +52,20 @@ class main{
     
 
     public static void main(String args[]){
-        Graph g = new Graph(5);
+        Graph g = new Graph(8);
         ArrayList<Edge> graph[] = g.graph;
         g.addEdge(0,1,0,false);
         g.addEdge(1,2,0,false);
-        g.addEdge(2,4,0,true);
-        g.addEdge(2,3,0,false);
-        g.addEdge(3,0,0,false);
-        // g.display();
+        g.addEdge(1,3,0,false);
+        g.addEdge(2,4,0,false);
+        g.addEdge(2,5,0,false);
+        g.addEdge(3,6,0,false);
+        g.addEdge(6,5,0,false);
+        g.addEdge(5,7,0,false);
+        g.addEdge(4,7,0,false);
+        // g.addEdge(7,1,0,false);
+        
+        g.display();
         System.out.println(hasCycle(graph));
 
 
