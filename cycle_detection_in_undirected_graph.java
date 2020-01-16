@@ -42,6 +42,7 @@ class main{
         queue.add(src);
         color[src]=0;
         while(queue.size()>0){
+            System.out.println(queue);
             int currentVertex = queue.remove();
             color[currentVertex]=1;
             for(Edge e : graph[currentVertex]){
@@ -61,21 +62,26 @@ class main{
     public static void main(String args[]){
         Graph g = new Graph(14);
         ArrayList<Edge> graph[] = g.graph;
+        // g.addEdge(0,1,0,true);
+        // g.addEdge(1,2,0,true);
+        // g.addEdge(2,3,0,true);
+        // g.addEdge(3,4,0,true);
+        // g.addEdge(4,6,0,true);
+        // g.addEdge(3,5,0,true);
+        // g.addEdge(5,6,0,true);
+        // g.addEdge(5,9,0,true);
+        // g.addEdge(6,10,0,true);
+        // g.addEdge(10,11,0,true);
+        // g.addEdge(11,12,0,true);
+        // g.addEdge(11,13,0,true);
+        // g.addEdge(13,12,0,true);
+        // g.addEdge(4,7,0,true);
+        // g.addEdge(7,8,0,true);
         g.addEdge(0,1,0,true);
         g.addEdge(1,2,0,true);
         g.addEdge(2,3,0,true);
-        g.addEdge(3,4,0,true);
-        g.addEdge(4,6,0,true);
-        g.addEdge(3,5,0,true);
-        g.addEdge(5,6,0,true);
-        g.addEdge(5,9,0,true);
-        g.addEdge(6,10,0,true);
-        g.addEdge(10,11,0,true);
-        g.addEdge(11,12,0,true);
-        g.addEdge(11,13,0,true);
-        g.addEdge(13,12,0,true);
-        g.addEdge(4,7,0,true);
-        g.addEdge(7,8,0,true);
+        g.addEdge(3,0,0,true);
+        
         g.display();
         System.out.println(hasCycleBFS(0,graph));
         System.out.println(hasCycleDFS(0,graph));
