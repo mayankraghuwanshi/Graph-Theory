@@ -10,6 +10,7 @@ class main{
         g.addEdge(4,1,0,false);
         g.addEdge(2,3,0,false);
         g.addEdge(3,1,0,false);
+        g.addEdge(1,2,0,false);
         // g.addEdge(0,5,0,false);
         // g.addEdge(0,5,0,false);
         System.out.println(topologicalSort(graph));
@@ -43,6 +44,7 @@ class main{
             }
         }
         if(noOfPopedVertex==noOfVertices) return res;
+        System.out.println("Cycle detected!");
         return new LinkedList<>();
     }
 }
