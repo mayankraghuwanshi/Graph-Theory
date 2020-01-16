@@ -20,8 +20,8 @@ class main{
         int noOfPopedVerticex=0;
         //BFS Approach.
         Queue<Integer> queue = new LinkedList<>();
-        for(int item : degree){
-            if(item==0) queue.add(item);
+        for(int i=0;i<noOfNode;i++){
+            if(degree[i]==0) queue.add(i);
         }
         while(queue.size()>0){
             int currentVertex = queue.remove();
