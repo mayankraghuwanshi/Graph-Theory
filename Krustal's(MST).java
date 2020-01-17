@@ -42,10 +42,12 @@ class main{
                 return e1.weight-e2.weight;
             }
         });
+        //cycle detection left.
         for(int i=0;i<V-1;i++){
             Edge currentEdge = graph[i];
             output[i]=new Edge(currentEdge.srcVertex,currentEdge.desVertex,currentEdge.weight);
         }
+        
         for(Edge e : output){
             System.out.println(e.srcVertex+"->("+e.desVertex+"|"+e.weight+")");
         }
