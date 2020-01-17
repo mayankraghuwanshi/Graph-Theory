@@ -1,7 +1,8 @@
 # Graph-Theory Algorithms
-A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,```A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.```
+A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,
+<br>```A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.```
 <br>
-<img src = "https://adatis.co.uk/wp-content/uploads/Black-n-White.png">
+<img width = "500px"  src =  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Path-graph-theory.svg/1280px-Path-graph-theory.svg.png">
 <br>
 **Language :** Java <br>
 **References :** GeeksForGeeks, Introduction to Programing CLRS<br>
