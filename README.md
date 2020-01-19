@@ -19,7 +19,8 @@ A Graph is a non-linear data structure consisting of nodes and edges. The nodes 
 - TOPOLOGICAL SORT
 - KAHN'S ALGORITHM FOR TOPOLOGICAL SORT
 - KRUSKALS MST
-- Hamiltonian Path
+- HAMILTONIAN PATH & CYCLE
+- IS BIPARTITE GRAPH
 
 ## Pseudocode
 #### Bredth First Search (BFS)
@@ -116,6 +117,7 @@ hamiltonianPath(src,graph,visited,count,res)
     count <- count of edges covered so far
     res <- String containing coverted vertex to print
     append src to res
+    set src to visited
     if count is equal to |V-1| then print res and return 1
     set visited(src) <- true
         for all neighbour of graph(src)
@@ -125,7 +127,48 @@ hamiltonianPath(src,graph,visited,count,res)
         end of for
     return count
 ```
+#### isBipartite
+```
+[global variables]
+WHITE = -1
+RED = 0
+GREEN = 1
+isBipartite(s , G , colorMap)
+    s <- source vertex
+    G <- Graph
+    colorMap <- array contains color of each vertex
+    let Q <- Queue
+    use BFS put alternate color on earch level (RED/GREEN)
+    if a visited vertex comes again and have color which is not matching to the current level color
+        return false
+    Q.add(s)
+    let level <- 0
+    colorMap of s to GREEN
+    while Q is not Empty
+        let size <- size of Queue
+        while(size is greater then 0)
+            let currentVertex Q.dequeue()
+            for all neighbour of currentVertex
+                if neighbour color is WHITE
+                    change color to level%2
+                else if neighbour color is not WHITE and it is not equal to level%2
+                    return false;
+            end of for
+            increment level
+        end of while
+    end of while
+return true
 
+isBipartite(s,G)
+    let colorMap = array of color initially all color as WHITE
+    for all vertex of G
+        if color of vertex is WHITE
+            if isBipartite(vertex , G , colorMap) is false then return false
+    end of for
+return true
+        
+
+```
 
 
 

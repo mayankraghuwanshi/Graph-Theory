@@ -15,6 +15,8 @@ public class Graph{
             if(bidir){
                 this.graph[v].add(new Edge(u,weight));
             }
+        }else{
+            System.out.println("Index out of bound!");
         }
     }
     public void display(){
