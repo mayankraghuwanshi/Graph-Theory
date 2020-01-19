@@ -1,35 +1,7 @@
 import utils.*;
 import java.util.*;
 class main{
-    //to detect cycle in a undirected graph we will use DFS and we try to visit a vertex
-    //which is alredy visited and not parent of current 
-    //vertex then there is a cycle.
-    static boolean hasCycleDFS(int src , ArrayList<Edge> graph[]){
-        int noOfNodes=graph.length;
-        boolean isVisited[] = new boolean[noOfNodes];
-        int parent[] = new int[noOfNodes];
-        Stack<Integer> stack = new Stack<>();
-        stack.push(src);
-        isVisited[src]=true;
-        parent[src]=-1;
-        boolean cycle=false;
-        while(stack.size()>0){
-            int currentVertex = stack.pop();
-            for(Edge e : graph[currentVertex]){
-                int neighbourVertex = e.vertex;
-                if(!isVisited[neighbourVertex]){
-                    isVisited[neighbourVertex]=true;
-                    parent[neighbourVertex]=currentVertex;
-                    stack.push(neighbourVertex);
-                }
-                else if(isVisited[neighbourVertex] && parent[currentVertex]!=neighbourVertex){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
+       
     //below BFS method also called coloring method.
     //if we come to a vertex which is grey (0, which means this vertex is still inside the queue) then there is a cycle.
     static boolean hasCycleBFS(int src , ArrayList<Edge> graph[]){
@@ -83,10 +55,6 @@ class main{
         g.addEdge(3,0,0,true);
         
         g.display();
-        System.out.println(hasCycleBFS(0,graph));
-        System.out.println(hasCycleDFS(0,graph));
-        
-        
-        
+        System.out.println(hasCycleBFS(0,graph));       
     }
 }

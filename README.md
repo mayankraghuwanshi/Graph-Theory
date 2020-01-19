@@ -13,11 +13,13 @@ A Graph is a non-linear data structure consisting of nodes and edges. The nodes 
 - BFS COLORING
 - DFS
 - CONNECTED COMPONENTs DFS
-- CYCLE DETECTION IN UNDIRECTED GRAPH
+- CYCLE DETECTION IN UNDIRECTED GRAPH DFS
+- CYCLE DETECTION IN UNDIRECTED GRAPH BFS
 - CYCLE DETECTION IN DIRECTED GRAPH
 - TOPOLOGICAL SORT
 - KAHN'S ALGORITHM FOR TOPOLOGICAL SORT
 - KRUSKALS MST
+- Hamiltonian Path
 
 ## Pseudocode
 #### Bredth First Search (BFS)
@@ -105,7 +107,24 @@ CC(s,G)
     return count.
 ```
 
-
+#### Hamiltonian Path
+```
+hamiltonianPath(src,graph,visited,count,res)
+    src <- source vertex
+    graph <- Graph
+    visited <- boolean Array
+    count <- count of edges covered so far
+    res <- String containing coverted vertex to print
+    append src to res
+    if count is equal to |V-1| then print res and return 1
+    set visited(src) <- true
+        for all neighbour of graph(src)
+            if neighbour is not visited
+                set neighbour to visited
+                count += hamiltonianPath(neighbour,graph,visited,count+1,res)
+        end of for
+    return count
+```
 
 
 
