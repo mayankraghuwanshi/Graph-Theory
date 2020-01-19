@@ -24,7 +24,7 @@ A Graph is a non-linear data structure consisting of nodes and edges. The nodes 
 
 ## Pseudocode
 #### Bredth First Search (BFS)
-```
+```java
 let s<-Source node.
 let G<-Graph
 let Q<-queue
@@ -40,7 +40,7 @@ while Q is no empty
 end of while loop.
 ```
 #### Bredth First Search using Coloring Method.
-```
+```java
 BFS(s, G)
     s <- source vertex
     G <- Graph
@@ -60,7 +60,7 @@ BFS(s, G)
 ```
 
 #### Depth First Search (DFS)
-```
+```java
 DFS(s , G)
     s <- source vertex
     G <- Graph
@@ -78,7 +78,7 @@ DFS(s , G)
 ```
 #### Connected Components
 
-```
+```java
 DFS(s , G , visited)
     s <- source vertex
     G <- Graph
@@ -109,7 +109,7 @@ CC(s,G)
 ```
 
 #### Hamiltonian Path
-```
+```java
 hamiltonianPath(src,graph,visited,count,res)
     src <- source vertex
     graph <- Graph
@@ -128,7 +128,7 @@ hamiltonianPath(src,graph,visited,count,res)
     return count
 ```
 #### isBipartite
-```javascript
+```java
 [global variables]
 WHITE = -1
 RED = 0
