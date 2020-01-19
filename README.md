@@ -128,7 +128,7 @@ hamiltonianPath(src,graph,visited,count,res)
     return count
 ```
 #### isBipartite
-```
+```java
 [global variables]
 WHITE = -1
 RED = 0
